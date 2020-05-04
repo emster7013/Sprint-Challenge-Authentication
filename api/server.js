@@ -15,4 +15,8 @@ server.use(express.json());
 server.use('/api/auth', authRouter);
 server.use('/api/jokes', authenticate, jokesRouter);
 
+server.get('/', async (req, res) => {
+    res.status(200).json({ api: 'Fat cats, are cute cats' });
+});
+
 module.exports = server;
